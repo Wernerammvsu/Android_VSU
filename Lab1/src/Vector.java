@@ -25,8 +25,13 @@ public class Vector {
     }
 
     public double angle(Vector anotherVector){
-        double cos =  scalarMultiply(anotherVector) / (this.lenVector() * anotherVector.lenVector());
-        return Math.acos(cos) / Math.PI * 180 ;
+        double denominator = this.lenVector() * anotherVector.lenVector();
+        double result = 0;
+        if (denominator != 0) {
+            double cos = scalarMultiply(anotherVector) / (this.lenVector() * anotherVector.lenVector());
+            result = Math.acos(cos) / Math.PI * 180;
+        }
+        return result;
     }
 
     public Vector sum(Vector anotherVector){

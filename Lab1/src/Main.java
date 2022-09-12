@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Vector a = new Vector(1, 3, 5);
+        Vector a = new Vector(0, 0, 0);
         Vector b = new Vector(4, 2, -2);
         int N = 4;
 
