@@ -50,6 +50,27 @@ public class Vector {
         return randomVectors;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        Vector vector = (Vector) obj;
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        double x_res = Math.abs(this.x - vector.x);
+        double y_res = Math.abs(this.y - vector.y);
+        double z_res = Math.abs(this.z - vector.z);
+        double sumRes = x_res + y_res + z_res;
+        return sumRes <= 0.03;
+    }
+    @Override
+    public int hashCode(){
+        int hash = 5;
+        hash = 12 * hash + (int) Math.ceil(this.x);
+        hash = 12 * hash + (int) Math.ceil(this.y);
+        hash = 12 * hash + (int) Math.ceil(this.z);
+        return hash;
+    }
+
     public String toString(){
         return "[" + this.x + ", " + this.y + ", " + this.z + "]";
     }

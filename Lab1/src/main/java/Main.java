@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Vector a = new Vector(0, 0, 0);
+        Vector a = new Vector(1, 2, 6);
         Vector b = new Vector(4, 2, -2);
         int N = 4;
 
@@ -14,5 +14,6 @@ public class Main {
         System.out.println("Сумма векторов а и b: " + a.sum(b));
         System.out.println("Разность векторов а и b: " + a.difference(b));
         System.out.println("Массив векторов " + Arrays.toString(Vector.createRandomVectors(N)));
+        System.out.println(a);
     }
 }
