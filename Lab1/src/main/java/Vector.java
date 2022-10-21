@@ -62,6 +62,7 @@ public class Vector {
         double sumRes = x_res + y_res + z_res;
         return sumRes <= 0.03;
     }
+
     @Override
     public int hashCode(){
         int hash = 5;
@@ -70,6 +71,8 @@ public class Vector {
         hash = 12 * hash + (int) Math.ceil(this.z);
         return hash;
     }
+
+
 
     public String toString(){
         return "[" + this.x + ", " + this.y + ", " + this.z + "]";
