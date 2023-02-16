@@ -2,31 +2,26 @@ package com.example.firstjavaapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
-
 import com.example.firstjavaapp.models.Image;
 import com.example.firstjavaapp.models.Movie;
 import com.example.firstjavaapp.models.MovieList;
 import com.example.firstjavaapp.models.Person;
 import com.example.firstjavaapp.models.Review;
 import com.example.firstjavaapp.models.Season;
-
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private String[] name = {"Avatar", "Joker", "Titanic"};
+    private String[] name = {
+
+    };
     private String[] image = {
 
     };
@@ -39,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         getMovies();
-//        printPerson();
-//        printReview();
-//        printImage();
-//        printSeason();
+    //  printPerson();
+    //  printReview();
+    //  printImage();
+    //  printSeason();
     }
 
     public void renderMovies(String[] image, String[] name) {
@@ -113,11 +108,10 @@ public class MainActivity extends AppCompatActivity {
                         public void onResponse(@NonNull Call<Image> call, @NonNull Response<Image> response) {
                             assert response.body() != null;
                             Log.d("movieId", String.valueOf(movie.id));
-                            String previewUrl = response.body().docs.get(0).previewUrl;
                             if (finalI == image.length - 1) {
                                 renderMovies(image, name);
                             }
-                            Log.d("IMAGE", String.valueOf(image));
+                            Log.d("IMAGE", Arrays.toString(image));
                         }
 
                         @Override

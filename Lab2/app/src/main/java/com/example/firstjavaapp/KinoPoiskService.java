@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class KinoPoiskService {
     private static KinoPoiskService mInstance;
     private static final String BASE_URL = "https://api.kinopoisk.dev";
-    private Retrofit mRetrofit;
+    private final Retrofit mRetrofit;
 
     private KinoPoiskService() {
         mRetrofit = new Retrofit.Builder()
